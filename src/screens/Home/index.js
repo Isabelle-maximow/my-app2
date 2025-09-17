@@ -97,6 +97,10 @@ export const Home = () => {
           style={styles.contentList}
         />
 
+      <View>
+        <Text style = {styles.myname}> Made By: Isabelle Ferreira</Text>
+      </View>
+
       </ScrollView>
       <View style = {styles.footer}>
         <TouchableOpacity style = {styles.button}>

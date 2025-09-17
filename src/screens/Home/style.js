@@ -59,4 +59,9 @@ export const styles = StyleSheet.create({ // exportação
         justifyContent: "center",
         alignItems: "center",
     },
+    myname: {
+        color: "#efefefff",
+        marginTop: 12,
+        fontSize: 20,
+    },
 })
