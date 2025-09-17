@@ -12,6 +12,9 @@ import { MOVIESWATCHING } from "../../utils/moviesWatching";
 import { MoviesCard } from "../../components/MoviesCard";
 import { MOVIESWATCH } from "../../utils/moviesWatch";
 import { MOVIESCRIME } from "../../utils/moviesWatch";
+import { MOVIESCARDS } from "../../utils/moviescards";
+import { MOVIERECOMENDADOS } from "../../utils/moviesrecomendado";
+import Icon from "react-native-vector-icons/Ionicons";
 
 export const Home = () => {
   // Nome do componente com maiúscula
@@ -35,23 +38,37 @@ export const Home = () => {
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text style={styles.categoryText}>TV SHOWS</Text>
+          <Text style={styles.categoryText}>SERIES</Text>
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text style={styles.categoryText}>MOVIES</Text>
+          <Text style={styles.categoryText}>FILMES</Text>
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text style={styles.categoryText}>KIDS</Text>
+          <Text style={styles.categoryText}>INFANTIL</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView>
+ 
+      <ScrollView shows VerticalScrollIndicator={false}> 
+        {/* THUMBNAIL */}
+      <Text style={styles.movieText}>Acabaram de chegar</Text>
+      <FlatList
+        data={MOVIESCARDS}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL} />}
+        horizontal
+        showsHorizontal ScrollIndicator={false}
+        style={styles.chegou}
+      />
+
+
+
+
+
+      {/* <ScrollView showsVerticalScrollIndicator = {false}> */}
         {/* THUMBNAILS */}
         {/* 01 */}
-        <TouchableOpacity style={styles.MovieImageThumbnail}>
-          <Image source={MovieTheWheel}></Image>
-        </TouchableOpacity>
 
         {/* puxar os filmes automaticamente pelo id */}
         <Text style={styles.movieText}>Continue assistindo...</Text>
@@ -64,9 +81,19 @@ export const Home = () => {
           style={styles.contentList}
         />
 
+        <Text style={styles.movieText}>Recomendados</Text>
+        <FlatList
+          data={MOVIERECOMENDADOS}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL} />}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.contentList}
+        />
+
         {/* THUMBNAILS */}
         {/* 02 */}
-        <Text style={styles.movieText}>Recomendados</Text>
+        <Text style={styles.movieText}>Lançamento</Text>
         <FlatList
           data={MOVIESWATCH}
           keyExtractor={(item) => item.id}
@@ -78,7 +105,7 @@ export const Home = () => {
 
         {/* THUMBNAILS */}
         {/* 03 */}
-        <Text style={styles.movieText}>Crimes e Guerra</Text>
+        {/* <Text style={styles.movieText}>Crimes e Guerra</Text>
         <FlatList
           data={MOVIESCRIME}
           keyExtractor={(item) => item.id}
@@ -86,8 +113,30 @@ export const Home = () => {
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.contentList}
-        />
+        /> */}
       </ScrollView>
+      <View style = {styles.footer}>
+        <TouchableOpacity style = {styles.button}>
+          <Icon name = "home" size = {25} color = {"#fff"}> </Icon>
+          <Text style = {styles.label}>
+            Inicio
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style = {styles.button}>
+          <Icon name = "cloud-download" size = {25} color = {"#fff"}> </Icon>
+          <Text style = {styles.label}>
+            Downloads
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style = {styles.button}>
+          <Icon name = "settings-sharp" size = {25} color = {"#fff"}> </Icon>
+          <Text style = {styles.label}>
+            Config
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

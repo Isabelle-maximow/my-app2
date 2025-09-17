@@ -9,4 +9,14 @@ export const MOVIESWATCHING = [
     name: "Inception",
     moviesURL: require("../assets/movies/inception.png"),
   },
+  {
+    id: "3",
+    name: "Inception",
+    moviesURL: require("../assets/movies/inception.png"),
+  },
+  // {
+  //   id: "4",
+  //   name: "Inception",
+  //   moviesURL: require("../assets/movies/Dune.png"),
+  // },
 ];

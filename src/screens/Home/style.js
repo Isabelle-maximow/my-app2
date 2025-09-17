@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Button, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({ // exportação 
     container: {
@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({ // exportação
         flexDirection: "row",
         justifyContent: "space-evenly",
         marginTop: 30,
+        marginBottom: 20,
     },
     categoryText:{
         fontSize: 14,
@@ -28,7 +29,7 @@ export const styles = StyleSheet.create({ // exportação
     },
     MovieImageThumbnail:{
         width: "100%",
-        alignItems: "center"
+        alignItems: 'center'
     },
     contentList: {
         paddingLeft: 18,
@@ -40,5 +41,22 @@ export const styles = StyleSheet.create({ // exportação
         fontWeight: "700",
         padding: 15,
 
-    }
+    },
+    footer: {
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center",
+        paddingVertical: 10,
+        backgroundColor: "#3a4c61ff", 
+        marginTop: 10,
+    },
+    label: {
+        color: "#fff",
+        fontSize: 12,
+    },
+    button: {
+        justifyContent: "center",
+        alignItems: "center",
+    },
 })
