@@ -62,14 +62,8 @@ export const Home = () => {
         style={styles.chegou}
       />
 
-
-
-
-
-      {/* <ScrollView showsVerticalScrollIndicator = {false}> */}
         {/* THUMBNAILS */}
         {/* 01 */}
-
         {/* puxar os filmes automaticamente pelo id */}
         <Text style={styles.movieText}>Continue assistindo...</Text>
         <FlatList
@@ -103,17 +97,6 @@ export const Home = () => {
           style={styles.contentList}
         />
 
-        {/* THUMBNAILS */}
-        {/* 03 */}
-        {/* <Text style={styles.movieText}>Crimes e Guerra</Text>
-        <FlatList
-          data={MOVIESCRIME}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL} />}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={styles.contentList}
-        /> */}
       </ScrollView>
       <View style = {styles.footer}>
         <TouchableOpacity style = {styles.button}>
